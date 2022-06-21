@@ -1,0 +1,80 @@
+// Обнуление стилей
+@import "nullstyle.scss";
+// Подключение шрифтов
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+//SCSS
+.main {
+    font-family: 'Montserrat', sans-serif;
+}
+.spoiler {
+    font-size: 20px;
+		&__title {
+            text-align: center;
+            padding: 20px 0;
+		}
+
+		&__items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+		}
+
+		&__text {
+            text-decoration: underline;
+            cursor: pointer;
+            &:hover{
+                color: rgb(207, 0, 0);
+            }
+		}
+
+		&__description {
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+            max-height: 620px;
+            transition: all 1s ease;
+            p{
+                top: 0;
+                line-height: 1.4;
+                position: relative;
+                transform: translate(0, 0);
+                transition: all 1s ease;
+                margin: 20px 0 0 0;
+                padding: 20px 40px;
+                background-color: rgba(102, 102, 102, 0.2);
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    border: 20px solid transparent; /* Прозрачные границы */
+                    border-bottom: 20px solid rgba(102, 102, 102, 0.2);
+                    transform: translate(-50%, -100%);
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+		}
+}
+
+// .spoiler__description._hide {
+//     position: relative;
+//     overflow: hidden;
+// }
+
+.spoiler__description._hide p{
+    opacity: 0;
+    transform: translate(0, -110%);
+    transition: all 1s ease;
+}
+.spoiler__description._hide{
+    transition: all 1s ease;
+    max-height: 0px;
+}
+
+.spoiler__about{
+    padding: 20px 40px;
+    line-height: 1.4;
+}
